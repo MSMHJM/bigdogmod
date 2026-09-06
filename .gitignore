@@ -1,0 +1,15 @@
+# Gradle
+.gradle/
+build/
+run/
+
+# 本地依赖 jar（构建时需要自行放入 libs/）
+libs/
+
+# 日志
+build_log.txt
+
+# IDE
+.idea/
+*.iml
+.vscode/

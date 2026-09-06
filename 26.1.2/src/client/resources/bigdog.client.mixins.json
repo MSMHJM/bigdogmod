@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "com.bigdog.client.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "client": [
+    "BigDogEKeyMixin",
+    "WolfRenderStateMixin",
+    "WolfRendererMixin",
+    "WolfModelMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

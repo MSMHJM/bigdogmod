@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": "minecraft:chest",
+    "L": "minecraft:lead"
+  },
+  "pattern": [
+    "BBB",
+    " L ",
+    "   "
+  ],
+  "result": {
+    "id": "bigdog:cargo_upgrade"
+  }
+}

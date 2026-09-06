@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "bigdog",
+  "version": "${version}",
+  "name": "Big Dog Mod",
+  "description": "大狗模组：用大骨棒喂成年狗使其巨大化，满级可骑乘并释放嚼嚼嚼/坚守者音波技能。",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/bigdog/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.bigdog.BigDogMod"
+    ],
+    "client": [
+      "com.bigdog.client.BigDogClient"
+    ]
+  },
+  "mixins": [
+    "bigdog.mixins.json",
+    {
+      "config": "bigdog.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=0.19.3",
+    "minecraft": "~26.1.2-",
+    "java": ">=25",
+    "fabric-api": "*"
+  }
+}

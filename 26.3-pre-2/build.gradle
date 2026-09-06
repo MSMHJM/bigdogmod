@@ -1,0 +1,50 @@
+plugins {
+    id 'net.fabricmc.fabric-loom' version "${loom_version}"
+    id 'maven-publish'
+}
+
+loom {
+    splitEnvironmentSourceSets()
+    mods {
+        "bigdog" {
+            sourceSet sourceSets.main
+            sourceSet sourceSets.client
+        }
+    }
+}
+
+repositories {
+    // 国内镜像优先，加快依赖下载
+    maven { url = uri("https://maven.aliyun.com/repository/central") }
+    maven { url = uri("https://maven.fabricmc.net/") }
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    // Fabric API 0.159.4+26.3（本地 jar，官方 26.3 构建产物，mojmap 命名）
+    implementation files("libs/fabric-api-0.159.4+26.3.jar")
+    // 运行期由 fabric-api 主 jar 通过 jar-in-jar 加载嵌套模块，编译期单独引用
+    compileOnly fileTree(dir: "libs/modules", include: "*.jar")
+}
+
+processResources {
+    inputs.property "version", project.version
+    filesMatching("fabric.mod.json") {
+        expand "version": project.version
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    it.options.release = 25
+}
+
+java {
+    withSourcesJar()
+    sourceCompatibility = JavaVersion.VERSION_25
+    targetCompatibility = JavaVersion.VERSION_25
+}
+
+base {
+    archivesName = project.archives_base_name
+}

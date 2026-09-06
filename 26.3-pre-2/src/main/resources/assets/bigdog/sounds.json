@@ -1,0 +1,17 @@
+{
+  "upgrade": {
+    "sounds": [
+      "bigdog:bigdog"
+    ]
+  },
+  "bark": {
+    "sounds": [
+      "bigdog:bark"
+    ]
+  },
+  "puppy": {
+    "sounds": [
+      "bigdog:puppy"
+    ]
+  }
+}

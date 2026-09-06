@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "bigdog:item/skill_uninstall"
+  }
+}
